@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Define MathCheat bean -->
+	<bean id="mathCheatObjectValue"
+		class="com.example.demo.Pojo.MathCheat"></bean>
+
+	<!-- Define Student bean with Constructor Injection -->
+	<bean id="student" class="com.example.demo.Pojo.Student">
+		<constructor-arg name="id" value="101" />
+		<constructor-arg name="mathCheat"
+			ref="mathCheatObjectValue" />
+	</bean>
+
+
+	<bean id="info" class="com.example.demo.Pojo.InfoBean">
+		<property name="name" value="Lakshmi" />
+		<property name="msg" value="Welcome to GeeksforGeeks!!" />
+		<property name="frameworks">
+			<map>
+				<entry key="Struts"
+					value="Struts is an open source framework used to develop Java MVC based web applications."></entry>
+				<entry key="Spring"
+					value="Spring is an application framework used to develop Java Enterprise applications and designed on concept called Dependency injection."></entry>
+				<entry key="Hibernate"
+					value="Hibernate is an object-relational mapping (ORM) framework that works with relational databases to manage the data."></entry>
+			</map>
+		</property>
+	</bean>
+
+
+
+</beans>
